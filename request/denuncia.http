@@ -1,0 +1,44 @@
+@api = http://localhost:3000/denuncia
+@api2= http://localhost:3000
+GET {{api}}
+
+### Crear una nueva denuncia
+POST {{api}}
+Content-Type: application/json
+
+{
+    "Organizacion": "Afore Coppel",
+    "Pais": "México",
+    "Estado": "Campeche",
+    "Centro": 283,
+    "Nombre": "Jose",
+    "Correo": "n/a",
+    "Telefono": "6673567268",
+    "Detalle": "He tenido una pesima experiencia en dicha sucursal",
+    "Fecha": "2023-03-07",
+    "Contraseña": "123456789"
+}
+
+### Consultar denuncia en especifico
+GET {{api}}/00005/12345678
+
+### Actualizar una denuncia
+PUT {{api}}/00001
+Content-Type: application/json
+
+{
+    "comentarios": "Lamentamos las molestias",
+    "estatus": "Finalizado"
+}
+
+### GET organizacion
+GET {{api2}}/organizacion
+
+### GET pais
+GET {{api2}}/pais
+
+### GET estados
+GET {{api2}}/estados/3
+
+### GET usuario by login
+GET {{api2}}/usuarios/Administrador/password
